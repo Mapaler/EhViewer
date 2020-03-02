@@ -30,6 +30,8 @@ jobs:
       run: |
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
-        git log
-        git commit -am "Update translation at $(date)"
-        git push        
+        git status
+        if git commit -am "Update translation at $(date)";
+          git status
+          git push
+        fi    
