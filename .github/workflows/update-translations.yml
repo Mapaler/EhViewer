@@ -2,8 +2,11 @@ name: update translations
 
 on:
   push:
+    paths-ignore: 
+      - tag-translations
     branches:
       - '*'
+    
   schedule:
     - cron: 42 7 * * *
 jobs:
