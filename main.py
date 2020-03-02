@@ -101,7 +101,7 @@ def removeMarkdownFiles():
     rmtree('EhTagTranslator.wiki')
 
 if __name__ == "__main__":
-    if os.path.exists('EhTagTranslator.wiki'):
+    if os.path.exists('Database'):
         removeMarkdownFiles()
     downloadMarkdownFiles()
 
