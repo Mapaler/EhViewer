@@ -84,7 +84,7 @@ def saveTags(path, tags):
         f.write(sha1(path))
 
 def downloadMarkdownFiles():
-    if os.system('git clone https://github.com/Mapaler/EhTagTranslator.wiki.git --depth=1'):
+    if os.system('git clone https://github.com/EhTagTranslation/Database.git --depth=1'):
         raise ValueError('Failed to git clone')
 
 def rmtree(path):
@@ -117,7 +117,7 @@ if __name__ == "__main__":
         ('parody.md', 'p'),
         ('reclass.md', 'r')
     )
-    tags = [x for f, p in files for x in parseMarkdownFile(os.path.join('EhTagTranslator.wiki', 'database', f), p)]
+    tags = [x for f, p in files for x in parseMarkdownFile(os.path.join('Database', 'database', f), p)]
     saveTags('tag-translations/tag-translations-zh-rCN', tags)
 
     removeMarkdownFiles()
