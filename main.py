@@ -12,7 +12,7 @@ import hashlib
 from bs4 import BeautifulSoup
 
 TRANSLATION_PATCH = {
-    'l:chinese': '汉语'
+    # 'l:chinese': '汉语'
 }
 
 def removeEmojis(x):
@@ -98,7 +98,7 @@ def rmtree(path):
     os.rmdir(path)
 
 def removeMarkdownFiles():
-    rmtree('EhTagTranslator.wiki')
+    rmtree('Database')
 
 if __name__ == "__main__":
     if os.path.exists('Database'):
