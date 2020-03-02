@@ -3,7 +3,7 @@ name: update translations
 on:
   push:
     branches:
-      - *
+      - '*'
   schedule:
     - cron: 0 2 */3 * *
 jobs:
