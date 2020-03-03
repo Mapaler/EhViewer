@@ -1,0 +1,38 @@
+name: update translations
+
+on:
+  push:
+    paths-ignore: 
+      - tag-translations
+    branches:
+      - '*'
+    
+  schedule:
+    - cron: 42 7 * * *
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: tag-translations
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Build translation
+      run: |
+        python main.py
+    - name: Upload translation
+      run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        if git commit -am "Update translation at $(date)"; then
+          git push
+        fi    
