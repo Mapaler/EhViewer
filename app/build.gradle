@@ -21,6 +21,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        versionNameSuffix = 'official-final'
     }
 
     compileOptions {
