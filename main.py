@@ -116,6 +116,7 @@ if __name__ == "__main__":
         ('male.md', 'm'),
         ('mixed.md', 'x'),
         ('other.md', 'o'),
+        ('location.md', 'loc'),
         ('parody.md', 'p'),
         ('reclass.md', 'r')
     )
